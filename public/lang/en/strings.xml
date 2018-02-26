@@ -1,0 +1,42 @@
+<strings>
+    <message>
+        <welcome>Welcome</welcome>
+        <create>The user has been created successfully.</create>
+        <update>The user has been updated successfully.</update>
+    </message>
+
+    <button>
+        <create>Create</create>
+        <update>Update</update>
+        <edit>Edit</edit>
+        <remove>Remove</remove>
+        <login>Login</login>
+        <register>Register</register>
+        <cancel>Cancel</cancel>
+    </button>
+
+    <error>
+        <name>The name is required and must contain from 5 to 30 characters.</name>
+        <email>Type a valid email.</email>
+        <password>The password can be set with letters, numbers and _(underscore) and must contain from 6 to 20 characters.</password>
+        <create>Sorry! Could not create the user.</create>
+        <update>Sorry! Could not update the user.</update>
+        <delete>Sorry! Could not remove the user.</delete>
+        <login>The user has not been found!</login>
+    </error>
+
+    <field>
+        <name>Name</name>
+        <email>Email</email>
+        <password>Password</password>
+    </field>
+
+    <register>
+        <title>Please Sign Up</title>
+    </register>
+
+    <login>
+        <title>Please Sign in</title>
+        <first>Is your first time?</first>
+    </login>
+</strings>
