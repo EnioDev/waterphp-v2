@@ -11,25 +11,23 @@ ini_set('display_error', 0);
 
 define('DS', DIRECTORY_SEPARATOR);
 
-define('ROOT_PATH', dirname(__DIR__) . DS);
+define('ROOT_PATH', dirname(__DIR__).DS);
 
-define('APP_PATH', ROOT_PATH . 'app' . DS);
+define('APP_PATH', ROOT_PATH.'app'.DS);
 
-define('CONFIG_PATH', APP_PATH . 'config' . DS);
+define('CONFIG_PATH', APP_PATH.'config'.DS);
 
-define('CONTROLLER_PATH', APP_PATH . 'controller' . DS);
+define('CONTROLLER_PATH', APP_PATH.'controller'.DS);
 
-define('MODEL_PATH', APP_PATH . 'model' . DS);
+define('MODEL_PATH', APP_PATH.'model'.DS);
 
-define('VIEW_PATH', APP_PATH . 'view' . DS);
+define('VIEW_PATH', APP_PATH.'view'.DS);
 
-define('PUBLIC_PATH', ROOT_PATH . 'public' . DS);
+define('PUBLIC_PATH', ROOT_PATH.'public'.DS);
 
-define('LANGUAGE_PATH', PUBLIC_PATH . 'lang' . DS);
+define('LANGUAGE_PATH', PUBLIC_PATH.'lang'.DS);
 
-define('IMAGE_PATH', PUBLIC_PATH . 'images' . DS);
-
-define('LIB_PATH', ROOT_PATH . 'water' . DS);
+define('CORE_PATH', ROOT_PATH.'water'.DS);
 
 /*
  * ==============================================================
@@ -43,9 +41,9 @@ define('DOMAIN', (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ''));
 
 define('SUB_FOLDER', str_replace('public', '', dirname((isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : ''))));
 
-define('BASE_URL', PROTOCOL . DOMAIN . ((substr(SUB_FOLDER, -1, 1) == '/') ? substr(SUB_FOLDER, 0, strlen(SUB_FOLDER)-1) : SUB_FOLDER));
+define('BASE_URL', PROTOCOL.DOMAIN.(('/' === substr(SUB_FOLDER, -1, 1)) ? substr(SUB_FOLDER, 0, strlen(SUB_FOLDER) - 1) : SUB_FOLDER));
 
-define('PUBLIC_URL', BASE_URL . '/public');
+define('PUBLIC_URL', BASE_URL.'/public');
 
 /*
  * ==============================================================
@@ -53,7 +51,7 @@ define('PUBLIC_URL', BASE_URL . '/public');
  * ==============================================================
  */
 
-require_once(LIB_PATH . 'autoload.php');
+require_once CORE_PATH.'autoload.php';
 
 /*
  * ==============================================================
@@ -61,7 +59,7 @@ require_once(LIB_PATH . 'autoload.php');
  * ==============================================================
  */
 
-require_once(LIB_PATH . 'helpers.php');
+require_once CORE_PATH.'helpers.php';
 
 /*
  * ==============================================================
@@ -81,7 +79,7 @@ register_shutdown_function([&$errorHandler, 'waterShutdownHandler']);
  * ==============================================================
  */
 
-require_once(CONFIG_PATH . 'config.php');
+require_once CONFIG_PATH.'config.php';
 
 /*
  * ==============================================================
@@ -89,7 +87,7 @@ require_once(CONFIG_PATH . 'config.php');
  * ==============================================================
  */
 
-if (!defined('DEBUG_MODE') or (!is_integer(DEBUG_MODE) and !is_bool(DEBUG_MODE))) {
+if (!defined('DEBUG_MODE') or (!is_int(DEBUG_MODE) and !is_bool(DEBUG_MODE))) {
     define('DEBUG_MODE', 1);
 }
 // TODO: Create a default debug template to use when it is not defined by user.
@@ -107,11 +105,11 @@ if (!defined('ERROR_404_VIEW') or !is_string(ERROR_404_VIEW)) {
  * ==============================================================
  */
 
-if (!defined('SESSION_LIFETIME') or (!is_integer(SESSION_LIFETIME) and !is_string(SESSION_LIFETIME))) {
+if (!defined('SESSION_LIFETIME') or (!is_int(SESSION_LIFETIME) and !is_string(SESSION_LIFETIME))) {
     define('SESSION_LIFETIME', 7200);
 }
 
-$savePath = ROOT_PATH . 'storage' . DS . 'sessions';
+$savePath = ROOT_PATH.'storage'.DS.'sessions';
 
 ini_set('session.save_path', $savePath);
 ini_set('session.gc_maxlifetime', SESSION_LIFETIME);
@@ -155,7 +153,7 @@ if (!defined('ENCRYPTION_KEY') or !is_string(ENCRYPTION_KEY)) {
  */
 
 $router = new core\routing\Router();
-require_once(CONFIG_PATH . 'routes.php');
+require_once CONFIG_PATH.'routes.php';
 
 /*
  * ==============================================================
