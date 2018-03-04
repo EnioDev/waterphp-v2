@@ -1,25 +1,23 @@
 <?php
-    function loadClass($className)
+    function loadClass($classname)
     {
-        $fileName = '';
+        $filename = '';
 
-        if (false !== ($lastNsPos = strripos($className, '\\')))
-        {
-            $namespace = substr($className, 0, $lastNsPos);
-            $className = substr($className, $lastNsPos + 1);
-            $fileName = str_replace('\\', DS, $namespace) . DS;
+        if (false !== ($lastNsPos = strripos($classname, '\\'))) {
+            $namespace = substr($classname, 0, $lastNsPos);
+            $classname = substr($classname, $lastNsPos + 1);
+            $filename = str_replace('\\', DS, $namespace).DS;
         }
 
-        $fileName .= $className . '.php';
-        $fullFileName = LIB_PATH . $fileName;
+        $filename .= $classname.'.php';
+        $fullFilename = CORE_PATH.$filename;
 
-        if (file_exists($fullFileName)) {
-            require_once($fullFileName);
-        }
-        else {
-            $fullFileName = APP_PATH . $fileName;
-            if (file_exists($fullFileName)) {
-                require_once($fullFileName);
+        if (file_exists($fullFilename)) {
+            require_once $fullFilename;
+        } else {
+            $fullFilename = APP_PATH.$filename;
+            if (file_exists($fullFilename)) {
+                require_once $fullFilename;
             }
         }
     }
