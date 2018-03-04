@@ -1,18 +1,17 @@
 <?php load('template/header'); ?>
 
-<body class="padding-20">
-    <div class="container">
-        <div class="well text-center">
+<body>
+    <main role="main" class="container">
+        <div class="starter-template">
             <img src="<?php echo asset('images/stop.png'); ?>" />
             <h1>404 Not found</h1>
             <div class="alert alert-danger">
-                This will be shown if the page (controller or method) does not exist.
+                This will always be shown whether controller or method passed on the URL doesn't exist.
             </div>
-            <a href="<?php echo base_url(); ?>" class="btn btn-default">
-                <span class="glyphicon glyphicon-home"></span>
-                Home
+            <a href="<?php echo base_url(); ?>" class="btn btn-md btn-primary">
+                <span class="glyphicon glyphicon-home"></span>Home
             </a>
         </div>
-    </div>
+    </main>
 
-<?php load('template/footer'); ?>
+    <?php load('template/footer'); ?>
