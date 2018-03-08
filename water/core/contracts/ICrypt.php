@@ -1,8 +1,10 @@
-<?php namespace core\contracts;
+<?php
+
+namespace core\contracts;
 
 interface ICrypt
 {
-    public static function encode($decrypted);
+    public static function encode(string $decrypted): string;
 
-    public static function decode($encrypted);
+    public static function decode(string $encrypted): string;
 }
