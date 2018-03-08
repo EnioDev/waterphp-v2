@@ -18,7 +18,7 @@
  * 1 ou true = Ativado
  */
 
-define('DEBUG_MODE', 0);
+define('DEBUG_MODE', 1);
 
 /*
  * Você pode criar seu próprio modelo de página para depurar os erros,
@@ -92,7 +92,7 @@ define('CONTROLLER_INDEX', 'Home');
  *
  */
 
-define('DEFAULT_LANGUAGE', 'pt-br');
+define('DEFAULT_LANGUAGE', 'en');
 
 /*
  * --------------------------------------------------------------------------
@@ -100,9 +100,9 @@ define('DEFAULT_LANGUAGE', 'pt-br');
  * --------------------------------------------------------------------------
  *
  * Para usar a classe Session ou Auth você deve definir uma chave para
- * criptografar os dados, uma sequência de 32 caracteres (recomendado) que 
+ * criptografar os dados, uma sequência de 32 caracteres (recomendado) que
  * será usado para identificar sua aplicação.
- * 
+ *
  * Para maior segurança, informe também uma palavra que defina sua aplicação.
  *
  * Atenção: Se você já estiver usando a aplicação de exemplo com o framework
@@ -139,9 +139,9 @@ define('SECRET_WORD', 'jaspion');
  * define('DB_CONNPORT' , '5432');
  */
 
-define('DB_DBDRIVER' , 'mysql');
-define('DB_HOSTNAME' , 'localhost');
-define('DB_CONNPORT' , '3306');
-define('DB_DATABASE' , '');
-define('DB_USERNAME' , '');
-define('DB_PASSWORD' , '');
+define('DB_DBDRIVER', 'mysql');
+define('DB_HOSTNAME', 'localhost');
+define('DB_CONNPORT', '3306');
+define('DB_DATABASE', 'waterphp');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', 'root');
